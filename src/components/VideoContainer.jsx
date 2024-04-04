@@ -26,7 +26,7 @@ const VideoContainer = () => {
 
   const fetchVideoByCategory = async () => {
     try {
-      const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${category}&type=video&key=${API_KEY}`)
+      const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${category}&type=video&key=${API_KEY}`)
       // console.log(res);
       dispatch(setHomeVideo(res?.data?.items))
     } catch (error) {
